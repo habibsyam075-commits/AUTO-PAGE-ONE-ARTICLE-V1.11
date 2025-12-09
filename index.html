@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Auto Page One Article - The First Page Engine</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400&display=swap');
+      
+      body {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        background-color: #e7e5e4; /* Stone-200: Darker for higher contrast against white sheets */
+        color: #0c0a09; /* Stone-950: Almost black for text */
+        overflow: hidden;
+      }
+      
+      .font-serif-pro {
+        font-family: 'Merriweather', serif;
+      }
+
+      /* Scrollbar visibility improved */
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #78716c; /* Stone-500 */
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #57534e; /* Stone-600 */
+      }
+
+      /* High Contrast Selection */
+      ::selection {
+        background: #ea580c; /* Orange-600 */
+        color: #fff;
+      }
+
+      /* Animations */
+      @keyframes float {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-3px); }
+        100% { transform: translateY(0px); }
+      }
+      .animate-float {
+        animation: float 6s ease-in-out infinite;
+      }
+      
+      @keyframes slideInRight {
+        from { opacity: 0; transform: translateX(20px); }
+        to { opacity: 1; transform: translateX(0); }
+      }
+      .animate-slideIn {
+        animation: slideInRight 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      }
+
+      @keyframes fadeUp {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      .animate-fadeUp {
+        animation: fadeUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      }
+
+      /* Prose Styling - High Contrast */
+      .prose {
+        color: #1c1917; /* Stone-900 */
+        max-width: 65ch;
+      }
+      .prose h1 { display: none; } 
+      .prose h2 {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-size: 1.8rem;
+        font-weight: 800; /* Reduced from black to extrabold */
+        letter-spacing: -0.02em;
+        color: #000;
+        margin-top: 2.5rem;
+        margin-bottom: 1.25rem;
+        line-height: 1.2;
+      }
+      .prose h3 {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-size: 1.4rem;
+        font-weight: 700; /* Reduced from 800 */
+        color: #0c0a09;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        padding-left: 0;
+      }
+      .prose p {
+        margin-bottom: 1.5rem;
+        line-height: 1.8;
+        font-size: 1.05rem;
+        color: #292524; /* Stone-800 */
+      }
+      .prose a {
+        color: #ea580c;
+        text-decoration: underline;
+        text-decoration-thickness: 2px;
+        text-underline-offset: 2px;
+        font-weight: 700;
+        transition: all 0.2s;
+      }
+      .prose a:hover {
+        color: #c2410c;
+        background-color: #ffedd5;
+      }
+      .prose blockquote {
+        border-left: 5px solid #ea580c;
+        padding: 1rem 1.5rem;
+        font-family: 'Merriweather', serif;
+        font-style: italic;
+        font-size: 1.1em;
+        color: #44403c;
+        background: #fff7ed; /* Orange-50 */
+        border-radius: 0 8px 8px 0;
+        margin: 2rem 0;
+      }
+      .prose strong {
+        font-weight: 800;
+        color: #000;
+      }
+      .prose code {
+        background-color: #f5f5f4;
+        padding: 0.2rem 0.4rem;
+        border-radius: 4px;
+        font-family: 'Menlo', monospace;
+        font-size: 0.85em;
+        color: #c2410c;
+        border: 1px solid #d6d3d1;
+        font-weight: 600;
+      }
+      
+      /* Table Styling */
+      .prose table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 2.5rem 0;
+        font-size: 0.9em;
+        border: 2px solid #e7e5e4;
+        border-radius: 8px;
+        overflow: hidden;
+      }
+      .prose th {
+        background-color: #f5f5f4;
+        border-bottom: 2px solid #d6d3d1;
+        text-align: left;
+        padding: 1rem;
+        font-weight: 700;
+        color: #0c0a09;
+        text-transform: uppercase;
+        font-size: 0.75rem;
+        letter-spacing: 0.05em;
+      }
+      .prose td {
+        border-bottom: 1px solid #e7e5e4;
+        padding: 1rem;
+        color: #292524;
+        background: white;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0",
+    "marked": "https://esm.sh/marked@12.0.0"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
